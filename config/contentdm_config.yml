@@ -1,0 +1,16 @@
+defaults: &defaults
+  api_url: "http://backend.contentdm.org"
+  records_url: "http://frontend.contentdm.org"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
