@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = QuickSearchContentdm::VERSION
   s.authors     = ["Chad Nelson"]
   s.email       = ["chad.nelson@temple.edu"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of QuickSearchContentdm."
-  s.description = "TODO: Description of QuickSearchContentdm."
+  s.homepage    = "https://github.com/tulibraries/quick_search_contentdm"
+  s.summary     = "Summary"
+  s.description = "Plugin for NCSU Quicksearch to search contentDM"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
