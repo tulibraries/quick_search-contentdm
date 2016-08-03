@@ -1,4 +1,4 @@
-require "quick_search_contentdm/engine"
+require "quick_search-contentdm/engine"
 
 module QuickSearchContentdm
   # Your code goes here...

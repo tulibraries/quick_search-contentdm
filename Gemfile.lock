@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quick_search_contentdm (0.1.0)
+    quick_search-contentdm (0.1.0)
       rails (~> 5.0.0)
 
 GEM
@@ -113,7 +113,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  quick_search_contentdm!
+  quick_search-contentdm!
   sqlite3
 
 BUNDLED WITH
