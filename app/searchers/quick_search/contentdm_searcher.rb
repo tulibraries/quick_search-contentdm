@@ -3,6 +3,7 @@ module QuickSearch
 
     def search
       url = base_url + parameters.to_query
+			Rails.logger.info "ContenDM query url: #{url}"
       raw_response = @http.get(url)
       @response = JSON.parse(raw_response.body)
     end
@@ -18,6 +19,7 @@ module QuickSearch
           result.title = title(record)
           result.link = link(record)
           result.description = description(record)
+					result.thumbnail = thumbnail(record)
 
 
           @results_list << result
@@ -30,7 +32,7 @@ module QuickSearch
     private
 
     def base_url
-      QuickSearch::Engine::CONTENTDM_CONFIG[:api_url] + "/dmwebservices/index.php?"
+      QuickSearch::Engine::CONTENTDM_CONFIG['api_url'] + "/dmwebservices/index.php?"
     end
 
     def parameters
@@ -46,7 +48,7 @@ module QuickSearch
     end
 
     def link(record)
-      "#{QuickSearch::Engine::CONTENTDM_CONFIG[:records_url]}/cdm/#{object_type(record)}/collection/#{record['collection']}/id/#{record['pointer']}"
+      "#{QuickSearch::Engine::CONTENTDM_CONFIG['records_url']}/cdm/#{object_type(record)}/collection#{record['collection']}/id/#{record['pointer']}"
 
     end
 
@@ -61,6 +63,10 @@ module QuickSearch
         return 'singleitem'
       end
     end
+
+    def thumbnail(record)
+      "#{QuickSearch::Engine::CONTENTDM_CONFIG['records_url']}/utils/getthumbnail/collection#{record['collection']}/id/#{record['pointer']}"
+    end		
 
   end
 end
