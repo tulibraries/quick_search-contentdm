@@ -1,6 +1,10 @@
-
-display_name: "Temple Digital Collections"
-short_display_name: "Digital Collections"
-search_form_placeholder: "placeholder"
-module_callout: "a callout?"
+en:
+  contentdm_search:
+    display_name: "Temple Digital Collections"
+    short_display_name: "Digital Collections"
+    see_all_message: "Find more Temple Digital Collections"
+    search_form_placeholder: "Search for collections"
+    module_callout: "Search for collections"
+    error_service_message: "searching Temple Digital Collections"
+    no_results_service_message: "a different search for digital collections"
 
