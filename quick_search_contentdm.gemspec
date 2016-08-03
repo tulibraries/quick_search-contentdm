@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "quick_search_contentdm/version"
+require "quick_search-contentdm/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "quick_search_contentdm"
+  s.name        = "quick_search-contentdm"
   s.version     = QuickSearchContentdm::VERSION
   s.authors     = ["Chad Nelson"]
   s.email       = ["chad.nelson@temple.edu"]
-  s.homepage    = "https://github.com/tulibraries/quick_search_contentdm"
+  s.homepage    = "https://github.com/tulibraries/quick_search-contentdm"
   s.summary     = "Summary"
   s.description = "Plugin for NCSU Quicksearch to search contentDM"
   s.license     = "MIT"
