@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Chad Nelson"]
   s.email       = ["chad.nelson@temple.edu"]
   s.homepage    = "https://github.com/tulibraries/quick_search-contentdm"
-  s.summary     = "Summary"
+  s.summary     = "Plugin for NCSU Quicksearch to search contentDM"
   s.description = "Plugin for NCSU Quicksearch to search contentDM"
   s.license     = "MIT"
 
