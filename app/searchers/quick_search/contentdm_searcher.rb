@@ -32,13 +32,13 @@ module QuickSearch
     private
 
     def base_url
-      QuickSearch::Engine::CONTENTDM_CONFIG['api_url'] + "/dmwebservices/index.php?"
+      config['api_url'] + "/dmwebservices/index.php?"
     end
 
     def parameters
       {
-          'q' => "dmQuery/all/CISOSEARCHALL^#{http_request_queries['not_escaped']}^all^and/title!descri/" +
-              "nosort/#{@per_page}/#{@offset}/1/0/0/0/0/0/json",
+          'q' => "dmQuery/#{collections_to_search}/CISOSEARCHALL^#{http_request_queries['not_escaped']}^all^and/" + 
+					"title!descri/#{sort}/#{@per_page}/#{@offset}/1/0/0/0/0/0/json",
       }
     end
 
@@ -48,7 +48,7 @@ module QuickSearch
     end
 
     def link(record)
-      "#{QuickSearch::Engine::CONTENTDM_CONFIG['records_url']}/cdm/#{object_type(record)}/collection#{record['collection']}/id/#{record['pointer']}"
+      "#{config['records_url']}/cdm/#{object_type(record)}/collection#{record['collection']}/id/#{record['pointer']}"
 
     end
 
@@ -58,15 +58,34 @@ module QuickSearch
 
     def object_type(record)
       if record['filetype'] == 'cpd'
-        return 'compoundobject'
+        'compoundobject'
       else
-        return 'singleitem'
+        'singleitem'
       end
     end
 
     def thumbnail(record)
-      "#{QuickSearch::Engine::CONTENTDM_CONFIG['records_url']}/utils/getthumbnail/collection#{record['collection']}/id/#{record['pointer']}"
+      "#{config['records_url']}/utils/getthumbnail/collection#{record['collection']}/id/#{record['pointer']}"
     end		
 
+		def sort
+			if config.has_key? 'custom_sort'
+				"#{config['custom_sort']}"
+			else 
+				"nosort"
+			end
+		end
+
+	  def collections_to_search
+		  if config.has_key? 'collections'
+			  config['collections'].join('!')
+			else
+				'all'
+			end
+		end
+
+		def config
+			QuickSearch::Engine::CONTENTDM_CONFIG
+		end
   end
 end
