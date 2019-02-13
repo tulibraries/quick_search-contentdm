@@ -1,5 +1,8 @@
+
 # Quick Search Contentdm Plugin
 A plugin for [Quick Search](http://www.lib.ncsu.edu/reports/quicksearch) that allows you to search a ContentDM. The ContentDM instance's API must be publicly available.
+
+# This project is not actively maintained. It might still work, it might not.
 
 ## Usage
 Add the gem to your quick search application's `Gemfile` a then follow the instructions outlined in the Quick Search [Configuring Searchers](https://github.com/NCSU-Libraries/quick_search/blob/master/docs/configuration.md#configuring-searchers) docs.
