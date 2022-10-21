@@ -85,7 +85,7 @@ GEM
     modernizr-rails (2.7.1)
     mysql2 (0.5.3)
     nio4r (2.5.8)
-    nokogiri (1.13.8)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     quick_search-core (0.2.0)
